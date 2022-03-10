@@ -660,15 +660,30 @@ public final class AdaLSPServer {
 		final TextDocumentPositionParams params = new TextDocumentPositionParams(
 			new TextDocumentIdentifier(documentUri), position);
 
-		List<? extends Location> locations =
-			documentRequest("textDocument/definition", documentUri,
-				() -> server.getTextDocumentService().definition(params));
+		Either<List<? extends Location>, List<? extends LocationLink>> either = documentRequest("textDocument/definition",
+				documentUri,
+				() -> {
+					return server.getTextDocumentService().definition(params);
+
+				});
+
+
+		List<Location> locations = null;
+		if(either.isLeft())
+			locations = (List<Location>)either.getLeft();
+		else if(either.isRight())
+		{
+			locations = new ArrayList<>();
+
+			for(LocationLink link : either.getRight())
+				locations.add(new Location(link.getTargetUri(), link.getTargetRange()));
+		}
+
 
 		if (locations == null || locations.size() == 0) { return null; }
 
 		// TODO: Decide how to handle multiple locations
 		return locations.get(0);
-
 	}
 
 	/**

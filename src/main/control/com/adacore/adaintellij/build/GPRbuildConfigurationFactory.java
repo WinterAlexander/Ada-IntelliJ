@@ -2,6 +2,7 @@ package com.adacore.adaintellij.build;
 
 import com.intellij.execution.configurations.*;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -15,6 +16,13 @@ public final class GPRbuildConfigurationFactory extends ConfigurationFactory {
 	 * @param type The configuration type for this factory.
 	 */
 	GPRbuildConfigurationFactory(ConfigurationType type) { super(type); }
+
+	@Override
+	public @NotNull
+	@NonNls String getId()
+	{
+		return "gprbuild";
+	}
 
 	/**
 	 * @see com.intellij.execution.configurations.ConfigurationFactory#createTemplateConfiguration(Project)

@@ -36,7 +36,7 @@ public final class GPRFileType extends LanguageFileType {
 	 */
 	@NotNull
 	@Override
-	public String getDescription() { return "Ada GNAT Project File"; }
+	public String getDescription() { return "Ada GNAT project file"; }
 
 	/**
 	 * @see com.intellij.openapi.fileTypes.FileType#getDefaultExtension()
