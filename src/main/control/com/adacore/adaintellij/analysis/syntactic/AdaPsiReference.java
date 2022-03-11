@@ -2,6 +2,8 @@ package com.adacore.adaintellij.analysis.syntactic;
 
 import com.intellij.lang.ASTNode;
 import com.intellij.openapi.editor.Document;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectCoreUtil;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.*;
@@ -224,6 +226,17 @@ public final class AdaPsiReference extends AdaPsiElement
 
 		return adaDefinition;
 
+	}
+
+	@Override
+	public @NotNull Project getProject()
+	{
+		PsiManager manager = getParent().getManager();
+
+		if(manager == null)
+			throw new RuntimeException("Manager is null");
+
+		return manager.getProject();
 	}
 
 	/**

@@ -46,21 +46,21 @@
 
 	<project-components>
 
-		<!-- Ada project component -->
+		<!-- Ada project component -->
 		<component>
 			<implementation-class>com.adacore.adaintellij.project.AdaProject</implementation-class>
 		</component>
 
-		<!-- GPR file manager component -->
+		<!-- GPR file manager component -->
 		<component>
 			<implementation-class>com.adacore.adaintellij.project.GPRFileManager</implementation-class>
 		</component>
-		<!-- GPRbuild configuration manager component -->
+		<!-- GPRbuild configuration manager component -->
 		<component>
 			<implementation-class>com.adacore.adaintellij.build.GPRbuildConfigurationManager</implementation-class>
 		</component>
 
-		<!-- LSP driver component -->
+		<!-- LSP driver component -->
 		<component>
 			<implementation-class>com.adacore.adaintellij.lsp.AdaLSPDriver</implementation-class>
 		</component>
