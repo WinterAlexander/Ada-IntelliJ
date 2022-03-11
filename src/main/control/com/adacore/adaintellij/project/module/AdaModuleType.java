@@ -71,10 +71,6 @@ public final class AdaModuleType extends ModuleType<AdaModuleBuilder> {
 	@Override
 	public Icon getIcon() { return Icons.ADA_MODULE; }
 
-	/**
-	 * @deprecated but still required by ModuleType.
-	 * To be removed in the future.
-	 */
 	@Override
 	public Icon getNodeIcon(@Deprecated boolean isOpened) {
 		return getIcon();

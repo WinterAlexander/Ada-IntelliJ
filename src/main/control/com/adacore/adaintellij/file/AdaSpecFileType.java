@@ -29,6 +29,13 @@ public final class AdaSpecFileType extends AdaFileType {
 	@Override
 	public String getName() { return "Ada Specification"; }
 
+	@Override
+	public @Nls
+	@NotNull String getDisplayName()
+	{
+		return getName();
+	}
+
 	/**
 	 * @see com.intellij.openapi.fileTypes.FileType#getDescription()
 	 */

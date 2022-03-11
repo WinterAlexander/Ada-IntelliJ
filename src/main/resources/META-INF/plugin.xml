@@ -75,7 +75,23 @@
 		<applicationConfigurable instance="com.adacore.adaintellij.settings.AdaGlobalSettings" groupId="language"/>
 
 		<!-- Ada file type factory -->
-		<fileTypeFactory implementation="com.adacore.adaintellij.file.AdaFileTypeFactory"/>
+		<fileType name="Ada Body"
+				  implementationClass="com.adacore.adaintellij.file.AdaBodyFileType"
+				  fieldName="INSTANCE"
+				  language="Ada"
+				  extensions="adb"/>
+
+		<fileType name="Ada Specification"
+				  implementationClass="com.adacore.adaintellij.file.AdaSpecFileType"
+				  fieldName="INSTANCE"
+				  language="Ada"
+				  extensions="ads"/>
+
+		<fileType name="Ada GPR File"
+				  implementationClass="com.adacore.adaintellij.file.GPRFileType"
+				  fieldName="INSTANCE"
+				  language="GPR File"
+				  extensions="gpr"/>
 
 		<!-- Ada module builder -->
 		<moduleBuilder builderClass="com.adacore.adaintellij.project.module.AdaModuleBuilder" id="ADA_MODULE_BUILDER" order="first"/>

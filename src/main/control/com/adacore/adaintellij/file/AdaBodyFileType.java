@@ -29,12 +29,19 @@ public final class AdaBodyFileType extends AdaFileType {
 	@Override
 	public String getName() { return "Ada Body"; }
 
+	@Override
+	public @Nls
+	@NotNull String getDisplayName()
+	{
+		return getName();
+	}
+
 	/**
 	 * @see com.intellij.openapi.fileTypes.FileType#getDescription()
 	 */
 	@NotNull
 	@Override
-	public String getDescription() { return "Ada Body Source File"; }
+	public String getDescription() { return "Ada body source file"; }
 
 	/**
 	 * @see com.intellij.openapi.fileTypes.FileType#getDefaultExtension()
